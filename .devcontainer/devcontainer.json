@@ -1,10 +1,9 @@
 {
-    "name": "Mojo Development",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "features": {
-        "ghcr.io/devcontainers/features/python:1": {}
-    },
-    "postCreateCommand": "curl -fsSL https://developer.modular.com/install | sh - && echo 'export MODULAR_HOME=\"/home/codespace/.modular\"' >> ~/.bashrc && echo 'export PATH=\"$MODULAR_HOME/pkg/packages.modular.com_mojo/bin:$PATH\"' >> ~/.bashrc",
+    "name": "Mojo Development with Pixi",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    
+    "postCreateCommand": "curl -fsSL https://pixi.sh/install.sh | bash && source ~/.bashrc && pixi install mojo && echo 'eval \"$(pixi shell --help)\"' >> ~/.bashrc",
+    
     "customizations": {
         "vscode": {
             "extensions": [
