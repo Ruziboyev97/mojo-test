@@ -1,6 +1,13 @@
 from gridv1 import Grid
 
-def main():
+def run_display(var grid: Grid) -> None:
+    while True:
+        print(String(grid))
+        print()
+        if input("Enter 'q' to quit or press <Enter> to continue: ") == "q":
+            break
+        grid = grid.evolve()
 
-    start = Grid.random(8, 30)
-    print(String(start))
+def main():
+    start = Grid.random(16, 16)
+    run_display(start^)
